@@ -1,0 +1,78 @@
+conversations:
+  Daniel:
+    quester: 'Daniel'
+    first: 'initial-greeting, completed, incomplete, noKills, reward, questIncomplete'
+    NPC_options:
+      initial-greeting:
+        text: "Ah, adventurer! You've come seeking glory, I see. The arena is alive with the cries of battle, and I've got a challenge for you."
+        conditions: "!completedTag"
+        pointer: "accept, completed"
+      accept_2: 
+        text: "Five combatants stand ready to face you. Your task is to defeat them in the arena. Show no mercy!"
+        conditions: "!completedTag"
+        pointer: "question"
+      deny_2:
+        text: "Come back next time champion. I'll have something else for you to do tomorrow."
+      completed_2:
+        text: "I apologise champion, I cannot let you try again today. Come back tomorrow for another quest!"
+        conditions: "completedTag"
+      affirm:
+        text: "This is the arena! It’s not just about the kill; it’s about the spectacle! Prove your might, and the crowd will roar for you."
+        pointer: "question_2"
+      answer:
+        text: "Fame, fortune, and a hefty reward of jade await you. Plus, the thrill of combat is unmatched! Are you up for it?"
+        pointer: "accept_3, deny"
+      warparena:
+        text: "Head to the arena warp. Your foes are waiting. Just remember, they won’t go down easily. Good luck, champion!"
+        pointer: "accept_4"
+      reward:
+        text: "You've returned! Did you manage to take down those five fighters?"
+        events: "killscompleted"
+        conditions: "!completed, startedTag, killingDoneTag"
+        pointer: "crowd"
+      questIncomplete:
+        text: "You've returned? Looks like you haven't slain five combatants yet! Come back later when you have."
+        conditions: "startedTag, !killingDoneTag, !completedTag"
+      noKills:
+        text: "Champion! Looks like you haven't completed your daily yet!"
+        conditions: "started, incomplete"
+      reward_2:
+        text: "Excellent! You've earned your place among the legends. Here’s your reward, use it wisely."
+        pointer: "reward_3"
+      reward_4:
+        text: "More challenges await, but that’s a tale for tomorrow. For now, bask in your victory!"
+    player_options:
+      accept: 
+        text: "What do you need me to do?"
+        conditions: "!completedTag"
+        pointer: "accept_2"
+      deny: 
+        text: "Sorry, I don't have the time right now!"
+        conditions: "!completedTag"
+        pointer: "deny_2"
+      question:
+        text: "Five? That’s a lot of bloodshed."
+        pointer: "affirm"
+      question_2:
+        text: "What’s in it for me?"
+        pointer: "answer"
+      accept_3:
+        text: "Consider it done. Where do I start?"
+        pointer: "warparena"
+      accept_4:
+        text: "I’ll make sure they remember my name."
+        events: "questStarted"
+      crowd:
+        text: "Absolutely! The crowd loved the show."
+        pointer: "reward_2"
+      completed:
+        text: "Can I try again?"
+        conditions: "completedTag"
+        pointer: "completed_2"
+      reward_3:
+        text: "I will! What’s next?"
+        events: "questCompleted"
+        pointer: "reward_4"
+      
+      
+      
