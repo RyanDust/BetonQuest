@@ -1,0 +1,28 @@
+conversations:
+  Jack:
+    quester: "Jack"
+    first: "initial_greeting"
+    stop: "false"
+    NPC_options:
+      initial_greeting:
+        text: "Sup cunt"
+        pointer: "pullup"
+      diddy_party:
+        text: "wanna come to the diddy party"
+        pointer: "diddy_yes, diddy_no"
+      aight:
+        text: "be there at 7"
+      fuckoff:
+        text: "fuck off then ya silly cunt"
+    player_options:
+      pullup:
+        text: "Shoot the fuck up"
+        pointer: 'diddy_party'
+      diddy_yes:
+        text: "yes"
+        pointer: "aight"
+      diddy_no:
+        text: "no"
+        pointer: "fuckoff"
+       
+
