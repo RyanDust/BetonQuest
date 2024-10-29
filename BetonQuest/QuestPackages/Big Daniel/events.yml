@@ -1,0 +1,8 @@
+events:
+  questStarted: "folder startedTagAdd, addkillingObjective"
+  startedTagAdd: "tag add startedTag"
+  addKillingObjective: "objective add killingObjective"
+
+  questCompleted: "folder killsCompleted, rewardPlayer"
+  killsCompleted: "tag add completedTag"
+  rewardPlayer: ""
